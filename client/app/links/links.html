@@ -1,4 +1,5 @@
 <div id='container' ng-controller='LinksController'>
+    <button ng-click='Auth.signout()'>Logout</button>
     <input /> 
     <ul>
       <li ng-repeat='link in data.links track by $index'></li>
