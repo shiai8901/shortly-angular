@@ -9,6 +9,6 @@ angular.module('shortly.links', [])
       $scope.data.links = response;
     });
   };
-
   $scope.getAll();
+  console.log($scope.data);
 });

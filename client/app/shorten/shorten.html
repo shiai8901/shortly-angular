@@ -1,6 +1,6 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' ng-controller='ShortenController'>
+  <input ng-model='newUrl'/> 
+  <button ng-click='link.url = newUrl; addLink(link); link = {}; newUrl = "";'></button>
 </div>
 
 
