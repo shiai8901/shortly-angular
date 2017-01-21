@@ -20,3 +20,4 @@ module.exports = function (app, express) {
   app.use(helpers.errorHandler);
 };
 
+// '$route.routes['/links'].controller'
