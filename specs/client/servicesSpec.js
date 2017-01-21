@@ -36,9 +36,7 @@ describe('Services', function () {
         { title: 'Reddit',
           url: 'https://reddit.com/r/javascript' }
       ];
-
       $httpBackend.expect('GET', '/api/links').respond(mockResponse);
-
       Links.getAll().then(function (links) {
         expect(links).to.deep.equal(mockResponse);
       });
@@ -55,10 +53,12 @@ describe('Services', function () {
           url: 'https://github.com/reactorcore',
           title: 'reactorcore'
         });
-
       Links.addOne(github).then(function (resp) {
+        // console.log( resp.status === 201 );
+        // console.log(resp.data.title);
         expect(resp.status).to.equal(201);
-        expect(resp.data.title).to.equal('Hack Reactor Labs');
+        expect(resp.data.title).to.equal('reactorcore');
+        /////////// We changed Hack Reactor Labs to reactorcore
       });
 
       $httpBackend.flush();
