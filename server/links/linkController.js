@@ -57,7 +57,8 @@ module.exports = {
     findLink({code: req.params.code})
       .then(function (link) {
         if (!link) {
-          return next(new Error('Link not added yet'));
+          // return next(new Error('Link not added yet'));
+          res.redirect('/#/links');
         }
 
         link.visits++;

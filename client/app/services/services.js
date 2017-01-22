@@ -38,6 +38,7 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+      console.log('User is signed in');
       return resp.data.token;
     });
   };
@@ -49,15 +50,18 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+      console.log('User is signed up');
       return resp.data.token;
     });
   };
 
   var isAuth = function () {
+    console.log('User is authenticated');
     return !!$window.localStorage.getItem('com.shortly');
   };
 
   var signout = function () {
+    console.log('User is signed out');
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };

@@ -1,7 +1,22 @@
 <div id='container' ng-controller='LinksController'>
-    <button ng-click='Auth.signout()'>Logout</button>
-    <input /> 
+	<div class="navigation">
+	  <ul>
+		<li><a href="#/links">Links</a></li>
+		<li><a href="#/shorten">Shorten</a></li>
+        <li><a href="#/singin" ng-click='Auth.signout()'>Logout</a></li>
+  	  </ul>
+	</div>
+	
+    <input ng-change=""/> 
     <ul>
-      <li ng-repeat='link in data.links track by $index'></li>
+      <li class="link" ng-repeat='link in data.links track by $index'>
+      <img src='../../assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a href="{{link.baseUrl + '/' + link.code}}">{{link.baseUrl}}/{{link.code}}</a>
+      </div>
+	  </li>
     </ul>
 </div>

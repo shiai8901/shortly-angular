@@ -1,6 +1,19 @@
 <div id='container' ng-controller='ShortenController'>
-  <input ng-model='newUrl'/> 
-  <button ng-click='link.url = newUrl; addLink(link); link = {}; newUrl = "";'></button>
+<!--   <button ng-click='Auth.signout()'>Logout</button>-->
+  	<div class="navigation">
+	  <ul>
+		<li><a href="#/links">Links</a></li>
+		<li><a href="#/shorten">Shorten</a></li>
+        <li><a href="#/singin" ng-click='Auth.signout()'>Logout</a></li>
+  	  </ul>
+	</div>
+  <div id="creator">
+    <form>
+      <input ng-model='newUrl' ng-change="isValidUrl(newUrl)" /> 
+      <input ng-click='addLink(newUrl); newUrl=""' type='submit' value='Shorten'>
+    </form>
+    <!-- <img class='spinner' src='../../assets/spiffygif_46x46.gif'> -->
+
+    <div class="message">{{isValid}}</div>
+  </div>
 </div>
-
-
