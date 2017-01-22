@@ -1,5 +1,4 @@
 <div id='container' ng-controller='ShortenController'>
-<!--   <button ng-click='Auth.signout()'>Logout</button>-->
   	<div class="navigation">
 	  <ul>
 		<li><a href="#/links">Links</a></li>
@@ -12,8 +11,6 @@
       <input ng-model='newUrl' ng-change="isValidUrl(newUrl)" /> 
       <input ng-click='addLink(newUrl); newUrl=""' type='submit' value='Shorten'>
     </form>
-    <!-- <img class='spinner' src='../../assets/spiffygif_46x46.gif'> -->
-
     <div class="message">{{isValid}}</div>
   </div>
 </div>

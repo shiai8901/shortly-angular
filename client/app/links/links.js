@@ -14,6 +14,8 @@ angular.module('shortly.links', [])
   console.log('$scope.data', $scope.data);
 
   $scope.sort = function() {
-    
+    for (var i = 0; i < $scope.data.links.length; i++) {
+      
+    }
   }
 });

@@ -23,9 +23,11 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
-    .otherwise({redirect: '/signin'});
+    .otherwise({
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    });
     // Your code here
-  // $locationProvider.html5Mode(true);
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
   $httpProvider.interceptors.push('AttachTokens');

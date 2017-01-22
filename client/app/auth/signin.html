@@ -5,6 +5,6 @@
     <input type="password" ng-model='user.password'>
     <button>signin</button>
   </form>
-  <button ng-click='signout()'>Logout</button>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+  <div class="error">{{signinErrorMessage}}</div>
 </div>

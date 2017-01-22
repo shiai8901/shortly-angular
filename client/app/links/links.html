@@ -7,9 +7,9 @@
   	  </ul>
 	</div>
 	
-    <input ng-change=""/> 
+    <input ng-model="criteria" /> 
     <ul>
-      <li class="link" ng-repeat='link in data.links track by $index'>
+      <li class="link" ng-repeat="link in data.links | orderBy: '-visits' | filter: criteria">
       <img src='../../assets/redirect_icon.png'/>
       <div class='info'>
         <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>

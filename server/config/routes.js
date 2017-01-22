@@ -11,14 +11,8 @@ var isAuthenticated = function(req, res, next) {
 };
 
 module.exports = function (app, express) {
-  // app.get('/', isAuthenticated);
 
   app.get('/:code', linksController.navToLink);
-
-  // app.get('/test/:id/:username', function (req, res) {
-  //   console.log('This should be our id:', req.params.id);
-  //   console.log('This should be our username:', req.params.username);
-  // });
 
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);
@@ -34,5 +28,3 @@ module.exports = function (app, express) {
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
 };
-
-// '$route.routes['/links'].controller'
